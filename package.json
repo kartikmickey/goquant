@@ -9,27 +9,28 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@react-three/drei": "^10.6.0",
-    "@react-three/fiber": "^9.2.0",
-    "d3": "^7.9.0",
-    "date-fns": "^4.1.0",
-    "lucide-react": "^0.525.0",
-    "next": "15.4.4",
-    "react": "19.1.0",
-    "react-dom": "19.1.0",
-    "recharts": "^3.1.0",
-    "three": "^0.178.0",
-    "zustand": "^5.0.6"
+    "@react-three/drei": "^9.92.7",
+    "@react-three/fiber": "^8.15.11",
+    "date-fns": "^2.30.0",
+    "lucide-react": "^0.292.0",
+    "next": "14.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "recharts": "^2.9.3",
+    "three": "^0.160.0",
+    "zustand": "^4.4.7"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.4.4",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "@types/node": "^20.10.0",
+    "@types/react": "^18.2.41",
+    "@types/react-dom": "^18.2.17",
+    "@types/three": "^0.160.0",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "typescript": "^5.3.2"
+  },
+  "overrides": {
+    "three-mesh-bvh": "^0.7.0"
   }
 }

@@ -1,5 +1,3 @@
-
-// Also update the Markers component to fix the Text rendering issue
 // components/Globe/Markers.tsx
 
 'use client';
@@ -7,7 +5,7 @@
 import { useRef, useState, useMemo } from 'react';
 import { useFrame } from '@react-three/fiber';
 import * as THREE from 'three';
-import { Html, Billboard, Sphere } from '@react-three/drei';
+import { Html, Billboard } from '@react-three/drei';
 import { useStore } from '@/store/useStore';
 import { latLngToVector3, getProviderColor } from '@/lib/utils/coordinates';
 
@@ -40,10 +38,10 @@ function ExchangeMarker({ exchange, isSelected, isHovered }: MarkerProps) {
   
   return (
     <group position={position}>
-      {/* Use a sphere for better visibility */}
-      <Sphere
+      {/* Use a simple mesh instead of Sphere from drei */}
+      <mesh
         ref={meshRef}
-        args={[1, 8, 6]}
+        scale={[scale, scale, scale]}
         onPointerOver={() => {
           setLocalHover(true);
           setHoveredItem({ type: 'exchange', id: exchange.id });
@@ -56,6 +54,7 @@ function ExchangeMarker({ exchange, isSelected, isHovered }: MarkerProps) {
         }}
         onClick={() => setSelectedExchange(exchange)}
       >
+        <sphereGeometry args={[1, 8, 6]} />
         <meshStandardMaterial
           color={color}
           emissive={color}
@@ -63,7 +62,7 @@ function ExchangeMarker({ exchange, isSelected, isHovered }: MarkerProps) {
           metalness={0.8}
           roughness={0.2}
         />
-      </Sphere>
+      </mesh>
       
       {/* Always show exchange name for better visibility */}
       <Html
